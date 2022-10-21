@@ -15,11 +15,6 @@ export const addSuperhero = (superhero) => ({
   payload: superhero
 });
 
-// export const editSuperhero = (superhero) => ({
-//   type: ActionTypes.EDIT_SUPERHERO,
-//   payload: superhero
-// });
-
 export const removeSuperhero = (superhero) => ({
   type: ActionTypes.REMOVE_SUPERHERO,
   payload: superhero
@@ -56,45 +51,6 @@ export const fetchSingleSuperhero = (id) => (dispatch) => {
     .then(result => dispatch(addSuperhero(result)))
     .catch(error => dispatch(failed(error.message)));
 }
-
-// export const createSuperhero = (data) => (dispatch) => {
-//   dispatch(loading(true));
-  
-//   return fetch(`${process.env.REACT_APP_API_URL}superhero/`, {
-//     method: 'POST',
-//     body: data
-//   })
-//     .then(result => result.json())
-//     .then(result => dispatch(addSuperheros(result.data.getNews)))
-//     .catch(error => dispatch(failed(error.message)));
-// }
-
-// export const editSuperhero = (id) => (dispatch) => {
-//   dispatch(loading(true));
-
-//   return fetch(`${process.env.API_URL}superhero/${id}`, {
-//     method: 'PUT',
-//     //mode: 'cors',
-//     headers: {
-//       //'Content-Type': 'application/json'
-//       'Content-Type': 'multipart/form-data',
-//     },
-//     body: data
-//   })
-//     .then(result => dispatch(addSuperhero(result.data.getNews)))
-//     .catch(error => dispatch(newsFailed(error.message)));
-// }
-
-// export const deleteSuperhero = (id) => (dispatch) => {
-//   dispatch(loading(true));
-
-//   return fetch(`${process.env.API_URL}superhero/${id}`, {
-//     method: 'DELETE',
-//   })
-//     .then(result => result.json())
-//     .then(result => dispatch(addSuperhero(result.data.getNews)))
-//     .catch(error => dispatch(failed(error.message)));
-// }
 
 export const fetchSuperheroSet = (page, limit) => (dispatch) => {
   dispatch(loading(true));
